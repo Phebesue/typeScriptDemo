@@ -1,112 +1,99 @@
- //1         //2         //3
- let username: string = "instructor";
- let password2: string = "Letmein1234!";
- let instructorId: number = 5;
-
-let password1: string;
-let phoneNumber: number;
-let email: string;
-let socialSecurity: number;
-let isMarried: boolean;
-
-let greeting = "Hello";
+//1         //2         //3
+var username = "instructor";
+var password2 = "Letmein1234!";
+var instructorId = 5;
+var password1;
+var phoneNumber;
+var email;
+var socialSecurity;
+var isMarried;
+var greeting = "Hello";
 // errored code
-let password: string;
+var password;
 // password = 1234;
-
 // Basic Types
 // Number
-let age: number = 40;
-let currentYear: number = 2018
-
+var age = 40;
+var currentYear = 2018;
 // Octal Literals
-let decimal: number = 6;
-let hex: number = 0xf00d;
-let binary: number = 0b1010;
-
-
+var decimal = 6;
+var hex = 0xf00d;
+var binary = 10;
 // String
-let companyName: string;
-companyName = "Eleven Fifty"
+var companyName;
+companyName = "Eleven Fifty";
 // Single or double quotes are ok
-let appName: string = 'Twitter';
+var appName = 'Twitter';
 appName = "Instagram";
-
 // Boolean
-let isLoggedIn: boolean = true;
-let isGoldLevelUser: boolean = true;
-
+var isLoggedIn = true;
+var isGoldLevelUser = true;
 // Array
 //1
-let studentList: string[] = ['Tom', 'Tracy', 'Nikaya']
+var studentList = ['Tom', 'Tracy', 'Nikaya'];
 //2
-let allScores: Array<number> = [100, 92, 95, 96];
+var allScores = [100, 92, 95, 96];
 // indices works in the same way
 console.log("Student List:", studentList[0]);
-
 // Any
-let dataFromThirdParty: any = '12345';
+var dataFromThirdParty = '12345';
 console.log(dataFromThirdParty);
 console.log(typeof dataFromThirdParty);
-
 dataFromThirdParty = 12345;
 console.log(dataFromThirdParty);
 console.log(typeof dataFromThirdParty);
-
 // Void
-function sayHelloToAll() : void {
-    console.log("Hello to all!")
+function sayHelloToAll() {
+    console.log("Hello to all!");
 }
-
 // Null & Undefined
-let undefinedVariable: undefined = undefined;
-let nullVariable: null = null;
-
+var undefinedVariable = undefined;
+var nullVariable = null;
 // Tuple
 // Declare a tuple type
-let usernameAndId: [number, string];
+var usernameAndId;
 // Initialize it
 usernameAndId = [1, "kennisreally40"]; // OK
-
 // Errored code
 // usernameAndId = ["kenn26", 2];
-
 // Enum
-enum WeaponType { Sword, Saber, Spear}
-let weapon: WeaponType = WeaponType.Sword
-enum CardType { Ace = 1, Two, Three, Four }
-let cardType: string = CardType[2]
+var WeaponType;
+(function (WeaponType) {
+    WeaponType[WeaponType["Sword"] = 0] = "Sword";
+    WeaponType[WeaponType["Saber"] = 1] = "Saber";
+    WeaponType[WeaponType["Spear"] = 2] = "Spear";
+})(WeaponType || (WeaponType = {}));
+var weapon = WeaponType.Sword;
+var CardType;
+(function (CardType) {
+    CardType[CardType["Ace"] = 1] = "Ace";
+    CardType[CardType["Two"] = 2] = "Two";
+    CardType[CardType["Three"] = 3] = "Three";
+    CardType[CardType["Four"] = 4] = "Four";
+})(CardType || (CardType = {}));
+var cardType = CardType[2];
 console.log(cardType);
-
 // Union Types
-let x: number | string;
-let y: number | null;
-
+var x;
+var y;
 // examples
 x = '1234';
 x = 1234;
-
 // Errored Code - because boolean wasn't listed as an option
 // x = true;
 // y = false;
-
 // Annotations
-function demoFunction(someNum){
+function demoFunction(someNum) {
     return someNum;
 }
-
-
 // We can call the function with a number as the argument.
 // We can call the function with a string as an argument.
 // We can add arguments that weren't originally declared.
 demoFunction(1); //1
 demoFunction("stuff"); //2
 // demoFunction(1, "Stuff"); //3
-
-
 // JavaScript was created to be a client side language
-// TypeScript compiles into JS, while also implementing traditional types like we see in C3 or Java/
-
+// TypeScript compiles into JS, while also implementing tradional ttypes like we see in C3 or Java/
 /*
 Features of TypeScript
   -TypeScript code is converted to plain javaScript code
@@ -125,82 +112,74 @@ Advantages of TS
   -Static typing allows for checking type correctness at compile time, which is not available in JS
 */
 // JS declaration
-let b = 7;
+var b = 7;
 // Will fail because b has already been declared as a number
 // b = "seven";
-
 // TypeScript Declaration
-let username5: string = "instructor";
-let password5: string = "letmein";
-let instructorId5: number = 5;
-
-let phone: number;
-let isMarried5: boolean;
-
+var username5 = "instructor";
+var password5 = "letmein";
+var instructorId5 = 5;
+var phone;
+var isMarried5;
 // Numbers
-let age5: number = 26;
-
+var age5 = 26;
 // Strings
-let companyName5: string;
+var companyName5;
 companyName5 = "String";
-
 // Booleans
-let isLoggedIn5: boolean = false;
-let isLoggedOut5: boolean = true;
-
+var isLoggedIn5 = false;
+var isLoggedOut5 = true;
 // Array
 // if you state "string[]" you have an array of strings
-let studentList5: string[] = ["name", "age", "height"];
-let allScores5: Array<number> = [12, 44, 55, 21];
-
+var studentList5 = ["name", "age", "height"];
+var allScores5 = [12, 44, 55, 21];
 // Any
 /*
 We can toggle off forced types by using the "any" data type. It is commonly used for API calls, but practice is to use unknown. The Any data type is essentially turning typeScript off.
 */
-let dataFromThirdParty5: any = "12345";
+var dataFromThirdParty5 = "12345";
 dataFromThirdParty5 = 12345;
-
-
 // Void
 /*
 A Void data type has no data type at all - it's basically the complete opposite of Any. You may commonly see this as a return type of function that do not return a value
 */
-function sayHelloToAll5():void{
+function sayHelloToAll5() {
     console.log("Hello to all!");
     // return "string";    
 }
-
 // Null & Undefined
-let undefinedVariable5: undefined = undefined;
-let nullVariable5: null = null;
-
+var undefinedVariable5 = undefined;
+var nullVariable5 = null;
 // Tuple
 /*
 Tuple types allow you to create an array with multiple different types. You will still have a fixed number of items in the array, but the items need to be different types. This is great for key value pairs.
 */
-
-let userNameAndId5: [string, string, number, boolean];
+var userNameAndId5;
 userNameAndId5 = ["string", "string", 5, true];
-
-
 // Enum
-enum WeaponType5 {Sword, Saber, Spear};
-let weapon5: WeaponType5 = WeaponType5.Sword;
-
-enum CardType5{Ace5 = 1, Two5, Three5, Four5};
-let cardType5: string = CardType[2];
+var WeaponType5;
+(function (WeaponType5) {
+    WeaponType5[WeaponType5["Sword"] = 0] = "Sword";
+    WeaponType5[WeaponType5["Saber"] = 1] = "Saber";
+    WeaponType5[WeaponType5["Spear"] = 2] = "Spear";
+})(WeaponType5 || (WeaponType5 = {}));
+;
+var weapon5 = WeaponType5.Sword;
+var CardType5;
+(function (CardType5) {
+    CardType5[CardType5["Ace5"] = 1] = "Ace5";
+    CardType5[CardType5["Two5"] = 2] = "Two5";
+    CardType5[CardType5["Three5"] = 3] = "Three5";
+    CardType5[CardType5["Four5"] = 4] = "Four5";
+})(CardType5 || (CardType5 = {}));
+;
+var cardType5 = CardType[2];
 console.log(cardType);
-
 // Union Types
 /*
 Union Types allow us to have more flexibility with our variables, but we still intend on declaring what type(s) the variable should expect
 */
-
-let w: number | string;
+var w;
 w = 5;
-w = "five"
-
-
-
-
-
+w = "five";
+//# sourceMappingURL=01-types.js.map
